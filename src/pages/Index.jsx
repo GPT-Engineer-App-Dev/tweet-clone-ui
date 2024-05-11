@@ -1,18 +1,25 @@
-// Update this page (the content is just a fallback if you fail and example)
-// Use chakra-ui
-import { Container, Text, VStack } from "@chakra-ui/react";
-
-// Example of using react-icons
-// import { FaRocket } from "react-icons/fa";
-// <IconButton aria-label="Add" icon={<FaRocket />} size="lg" />; // IconButton would also have to be imported from chakra
+import { Container, VStack, Text, Input, Button, Box, Flex } from '@chakra-ui/react';
+import { FaTwitter } from 'react-icons/fa';
 
 const Index = () => {
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-      <VStack spacing={4}>
-        <Text fontSize="2xl">Your Blank Canvas</Text>
-        <Text>Chat with the agent to start making edits.</Text>
-      </VStack>
+    <Container maxW="container.md" p={5}>
+      <Flex direction="column" align="center" mb={5}>
+        <FaTwitter size="3em" color="#1DA1F2" />
+        <Text fontSize="2xl" fontWeight="bold" mt={3}>Welcome to MiniTwitter</Text>
+      </Flex>
+      <Box borderWidth="1px" borderRadius="lg" overflow="hidden" p={4}>
+        <VStack spacing={4}>
+          <Input placeholder="What's happening?" />
+          <Button colorScheme="twitter">Tweet</Button>
+        </VStack>
+      </Box>
+      <Box mt={6}>
+        <Text fontSize="lg" fontWeight="bold">Recent Tweets</Text>
+        <Box mt={2} borderWidth="1px" borderRadius="lg" p={4}>
+          <Text>No tweets to show</Text>
+        </Box>
+      </Box>
     </Container>
   );
 };
